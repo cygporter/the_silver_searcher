@@ -16,7 +16,7 @@ the_silver_searcher_CONTENTS='usr'
 
 the_silver_searcher_completion_SUMMARY='Ag completion for Bash'
 the_silver_searcher_completion_CONTENTS='etc'
-the_silver_searcher_completion_REQUIRES='the_silver_searcher bash_completion'
+the_silver_searcher_completion_REQUIRES='the_silver_searcher bash-completion'
 
 src_test() {
   lndirs  # The build supports out-of-path building, but the tests don't
