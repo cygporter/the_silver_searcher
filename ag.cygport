@@ -5,7 +5,7 @@ CATEGORY='Utils'
 SUMMARY='Ag: a code searching tool with a focus on speed'
 DESCRIPTION='The Silver Searcher (Ag) is a code searching tool similar to Ack,
 with a focus on speed.'
-HOMEPAGE='https://github.com/ggreer/the_silver_searcher'
+HOMEPAGE='http://geoff.greer.fm/ag/'
 SRC_URI="https://github.com/ggreer/the_silver_searcher/archive/${PV}.tar.gz"
 
 DEPEND='automake gcc-core libpcre-devel liblzma-devel make pkg-config'
