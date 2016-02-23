@@ -8,7 +8,15 @@ with a focus on speed.'
 HOMEPAGE='http://geoff.greer.fm/ag/'
 SRC_URI="https://github.com/ggreer/the_silver_searcher/archive/${PV}/the_silver_searcher-${PV}.tar.gz"
 
-DEPEND='automake gcc-core libpcre-devel liblzma-devel make pkg-config'
+DEPEND='
+  automake
+  bash-completion
+  gcc-core
+  libpcre-devel
+  liblzma-devel
+  make
+  pkg-config'
+
 
 PKG_NAMES='the_silver_searcher the_silver_searcher_completion'
 
