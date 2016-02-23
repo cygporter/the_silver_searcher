@@ -10,7 +10,13 @@ SRC_URI="https://github.com/ggreer/the_silver_searcher/archive/${PV}.tar.gz"
 
 DEPEND='automake gcc-core libpcre-devel liblzma-devel make pkg-config'
 
-PKG_NAMES='ag'
+PKG_NAMES='ag ag-completion'
+
+ag_CONTENTS='usr'
+
+ag_completion_SUMMARY='ag completion for Bash'
+ag_completion_CONTENTS='etc'
+ag_completion_REQUIRES='ag bash-completion'
 
 src_test() {
   lndirs  # The build supports out-of-path building, but the tests don't
