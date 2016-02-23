@@ -1,0 +1,24 @@
+NAME='the_silver_searcher'
+VERSION=0.31.0
+RELEASE=1
+CATEGORY='Utils'
+SUMMARY='Ag: a code searching tool with a focus on speed'
+DESCRIPTION='The Silver Searcher (Ag) is a code searching tool similar to Ack,
+with a focus on speed.'
+HOMEPAGE='https://github.com/ggreer/the_silver_searcher'
+SRC_URI="https://github.com/ggreer/the_silver_searcher/archive/${PV}.tar.gz"
+
+DEPEND='automake gcc-core libpcre-devel liblzma-devel make pkg-config'
+
+PKG_NAMES='ag'
+
+src_test() {
+  lndirs  # The build supports out-of-path building, but the tests don't
+  cd ${B}
+  cygmake test
+}
+
+src_install() {
+  cd ${B}
+  cyginstall bashcompdir=/etc/bash_completion.d
+}
