@@ -17,13 +17,17 @@ DEPEND='
   make
   pkg-config'
 
+# Completion script goes into the compatdir (for scripts loaded when Bash is
+# loaded) rather than the completionsdir (for scripts loaded on demand) because
+# it's named `ag.bashcomp.sh`, and renaming it is a faff.
+BASH_COMPLETION_DIR="$(pkg-config --variable=compatdir bash-completion)"
 
 PKG_NAMES='the_silver_searcher the_silver_searcher_completion'
 
-the_silver_searcher_CONTENTS='usr'
+the_silver_searcher_CONTENTS="--exclude=${BASH_COMPLETION_DIR#/} usr"
 
 the_silver_searcher_completion_SUMMARY='Ag completion for Bash'
-the_silver_searcher_completion_CONTENTS='etc'
+the_silver_searcher_completion_CONTENTS="${BASH_COMPLETION_DIR#/}"
 the_silver_searcher_completion_REQUIRES='the_silver_searcher bash-completion'
 
 src_test() {
@@ -34,5 +38,5 @@ src_test() {
 
 src_install() {
   cd ${B}
-  cyginstall bashcompdir=/etc/bash_completion.d
+  cyginstall bashcompdir="$BASH_COMPLETION_DIR"
 }
