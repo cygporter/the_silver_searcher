@@ -8,7 +8,7 @@ Usage
 Test failures
 -------------
 
-Currently (as of v0.32.0) the following tests fail:
+Currently (as of v0.31.0) the following tests fail:
 
 * `column.t`: This also fails on my CentOS box, so it doesn't appear to be Cygwin-specific.
 * `ignore_extensions.t`: This also fails on my CentOS box, so it doesn't appear to be Cygwin-specific.
