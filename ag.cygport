@@ -17,10 +17,6 @@ DEPEND='
   make
   pkg-config'
 
-# Completion script goes into the compatdir (for scripts loaded when Bash is
-# loaded) rather than the completionsdir (for scripts loaded on demand) because
-# it's named `ag.bashcomp.sh`, and renaming it is a faff.
-BASH_COMPLETION_DIR="$(pkg-config --variable=compatdir bash-completion)"
 
 src_test() {
   lndirs  # The build supports out-of-path building, but the tests don't
@@ -29,6 +25,10 @@ src_test() {
 }
 
 src_install() {
+  # Completion script goes into the compatdir (for scripts loaded when Bash is
+  # loaded) rather than the completionsdir (for scripts loaded on demand) because
+  # it's named `ag.bashcomp.sh`, and renaming it is a faff.
+  BASH_COMPLETION_DIR="$(pkg-config --variable=compatdir bash-completion)"
   cd ${B}
   cyginstall bashcompdir="$BASH_COMPLETION_DIR"
 }
