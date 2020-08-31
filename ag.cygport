@@ -1,5 +1,5 @@
 NAME='the_silver_searcher'
-VERSION=2.1.0
+VERSION=2.2.0
 RELEASE=1
 CATEGORY='Utils'
 SUMMARY='Ag: a code searching tool with a focus on speed'
