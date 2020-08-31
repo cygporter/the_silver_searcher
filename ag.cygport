@@ -17,6 +17,7 @@ DEPEND='
   make
   pkg-config'
 
+PATCH_URI='define-cpu-set-cygwin.patch'
 
 src_test() {
   lndirs  # The build supports out-of-path building, but the tests don't
